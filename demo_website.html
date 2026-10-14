@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Demo Website</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #f5f7fb;
+      line-height: 1.6;
+    }
+    header {
+      background: #ffffff;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .logo { font-size: 1.25rem; font-weight: 800; color: #4f46e5; }
+    nav a {
+      color: #334155;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: .95rem;
+    }
+    nav a:hover { color: #4f46e5; }
+    .hero {
+      padding: 85px 7% 75px;
+      text-align: center;
+      background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #4f46e5;
+      font-size: .85rem;
+      font-weight: 700;
+    }
+    h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; margin: 20px 0 14px; }
+    .hero p { max-width: 620px; margin: 0 auto 28px; color: #475569; font-size: 1.1rem; }
+    .button {
+      display: inline-block;
+      border: 0;
+      border-radius: 10px;
+      background: #4f46e5;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .button:hover { background: #3730a3; }
+    main { max-width: 1100px; margin: auto; padding: 55px 22px; }
+    .section-title { text-align: center; margin-bottom: 28px; }
+    .section-title p { color: #64748b; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(15,23,42,.06);
+    }
+    .icon { font-size: 2rem; }
+    .card h3 { margin: 12px 0 8px; }
+    .card p { margin: 0; color: #64748b; }
+    .contact {
+      margin-top: 45px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+    footer { text-align: center; padding: 22px; color: #64748b; font-size: .9rem; }
+    @media (max-width: 600px) {
+      header { flex-direction: column; }
+      nav a { margin: 0 8px; }
+      .hero { padding: 65px 6% 55px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">DemoSite</div>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <span class="badge">✨ Welcome to my demo</span>
+    <h1>Build something<br>awesome.</h1>
+    <p>A clean, simple, responsive website page to help you test your website setup. Change the text, colors, and sections to make it your own.</p>
+    <a class="button" href="#features">Explore Features</a>
+  </section>
+
+  <main>
+    <section id="features">
+      <div class="section-title">
+        <h2>What this page offers</h2>
+        <p>A few simple sections to get your website started.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>Responsive Design</h3>
+          <p>The layout adapts to mobile phones, tablets, and desktop screens.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Lightweight</h3>
+          <p>HTML and CSS are included in one file, so setup is quick and easy.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🎨</div>
+          <h3>Easy to Customize</h3>
+          <p>Update the wording, colors, and cards to match your own idea.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Want to know more?</h2>
+      <p>This is a demo contact section. Add your real email or contact form here later.</p>
+      <button class="button" onclick="showMessage()">Test Button</button>
+      <p id="message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>© 2026 DemoSite · A simple demo website</footer>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').textContent =
+        'It works! Your demo page is running successfully.';
+    }
+  </script>
+</body>
+</html>
